@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import axios from "axios";
+import API from "../services/api";
 
 import { toast } from "react-toastify";
 
@@ -91,17 +92,7 @@ const UploadImage = ({
       );
 
       // API CALL
-      const res =
-        await axios.post(
-          "http://localhost:8080/api/images/upload",
-          formData,
-          {
-            headers: {
-              "Content-Type":
-                "multipart/form-data",
-            },
-          }
-        );
+      const res = await API.post("/images/upload", formData);;
 
       // IMAGE URL
       setImageUrl(
