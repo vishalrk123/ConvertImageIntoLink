@@ -92,7 +92,7 @@ const UploadImage = ({
       );
 
       // API CALL
-      const res = await API.post("/images/upload", formData);;
+      const res = await API.post("/images/upload", formData);
 
       // IMAGE URL
       setImageUrl(
